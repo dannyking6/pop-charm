@@ -1,0 +1,56 @@
+/* Focus and selection disable========================================================================================= */
+html, body, canvas {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; /* Android no selection        */
+    -webkit-user-modify: read-only;                 /* Android 4.0.4 no selection  */
+    -webkit-user-select: none;
+    -webkit-focus-ring-color:  rgba(255, 255, 255, 0) !important;   /* Android no selection        */
+    outline: none !important;
+
+    touch-action: none; /* windows rt disable default scroll behaviour */
+}
+/* ==================================================================================================================== */
+
+/* GENERAL */
+html, body {
+    padding:0px;
+    margin:0px;
+    width:100%;
+    height:100%;
+    background: white;
+    overflow: hidden;
+}
+
+canvas{
+    margin: 0px; padding: 0px; border: 0px;
+    position: absolute; top: 0px; left: 0px;
+    color:#cccccc; cursor: pointer;
+    background-color: transparent;
+
+}
+
+/* CANVAS */
+#viewport{ height: 100%; position: absolute; }
+/*
+#canvasBackground {z-index: 50; }
+#canvas {z-index: 150;}
+#canvasGame{z-index: 100; }
+*/
+/* LOADING */
+.loading_screen { position: absolute;  display: none; }
+.loading_screen img{ display: none; }
+
+/* RESIZE */
+#resizebtn      { z-index: 250; position: absolute; top: 0px; left: 0px; cursor: pointer; }
+#resizebtn img  { width:100%; height:auto; position:absolute; display: none;}
+
+/* ERROR & MESSAGE */
+.error          {  z-index: 10000; position: absolute; width: 100%; display:none; text-align: center; }
+.error_image    { border:none; display: block; margin: 1em auto; max-width: 100%; height: auto; }
+.error_message  { border:none; display: block; }
+.error_message a  { cursor: pointer; }
+#no_support     {}
+
+body.message {
+    background: white !important;
+}
+#debug { font-size: 50%; color: red; z-index: 10000; position: absolute; top: 10px; left: 10px; }
